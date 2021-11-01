@@ -66,22 +66,21 @@ const Table = ({ headers, data, noDataMessage }) => {
     }
   }
 
-
-
   return <table className={styles.table}>
-  <thead className={styles.header}>
-    <tr className={styles.row}>
-      {headers.map((header, idx) => <td key={header} className={styles.cell} onClick={() => handleSortClick(idx)}>
-        {header}<SortArrow idx={idx} sortBy={sortBy} sortDirection={sortDirection} />
-      </td>)}
-    </tr>
-  </thead>
-  <tbody>
-    {getSortedData().map((row) => <tr key={row} className={styles.row}>
-      {row.map(cell => <td key={cell} className={styles.cell}>{cell}</td>)}
-    </tr>)}
-  </tbody>
-</table>
+    <thead className={styles.header}>
+      <tr className={styles.row}>
+        {headers.map((header, idx) => <td key={header} className={styles.cell} onClick={() => handleSortClick(idx)}>
+          {header} 
+          <SortArrow idx={idx} sortBy={sortBy} sortDirection={sortDirection} />
+        </td>)}
+      </tr>
+    </thead>
+    <tbody>
+      {getSortedData().map((row) => <tr key={row} className={styles.row}>
+        {row.map(cell => <td key={cell} className={styles.cell}>{cell}</td>)}
+      </tr>)}
+    </tbody>
+  </table>
 }
 
 export default Table

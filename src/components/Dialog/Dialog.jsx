@@ -4,7 +4,7 @@ import * as styles from './Dialog.module.scss'
 const Dialog = ({open, onClose, children }) => {
   const ESCAPE_KEY_CODE = 27
 
-  const handleKeyUp = (e) => {
+  const handleKeyUp = e => {
     if (e.keyCode === ESCAPE_KEY_CODE) {
       window.removeEventListener('keyup', handleKeyUp, false);
       onClose();
@@ -20,7 +20,7 @@ const Dialog = ({open, onClose, children }) => {
   }, [handleKeyUp]);
 
   return <div className={`${styles.dialog} ${open ? styles.isOpen : styles.isClosed}`}>
-    { open
+    {open
       ? <div onClick={() => onClose()} className={styles.backDrop} />
       : null 
     }

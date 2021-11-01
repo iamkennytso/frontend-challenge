@@ -29,7 +29,7 @@ const App = () => {
     }
   }, [])
 
-  const handlePropertyClick = async (propertyId, idx) => {
+  const handlePropertyClick = async propertyId => {
     setIsDialogOpen(true)
 
     try {
@@ -68,7 +68,7 @@ const App = () => {
     <div className={styles.contentContainer}>
       {propertiesOverview.length 
         ? propertiesOverview.map((property, idx) => (
-          <Card {...property} key={property.id} onClick={() => handlePropertyClick(property.id, idx)} />
+          <Card {...property} key={property.id} onClick={() => handlePropertyClick(property.id)} />
         ))
         : <LoadingSpinner />
       }
