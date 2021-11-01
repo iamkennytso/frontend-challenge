@@ -1,0 +1,33 @@
+@import '../../style/variables.scss';
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+  border: 2px solid $borderGray;
+  border-collapse: collapse;
+
+  .header {
+    font-weight: bold;
+    background-color: $borderGray;
+    padding: 0;
+    margin: 0;
+  }
+  .row {
+    padding: 0 20px;
+    height: 45px;
+  }
+  .cell {
+    border-top: 1px solid #ddd;
+  }
+  .cell:first-child {
+    padding-left: 10px
+  }
+}
+
+.centerDiv {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
