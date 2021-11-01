@@ -4,7 +4,6 @@ import * as styles from './Table.module.scss'
 import { ASCENDING, DECENDING } from '../../constants/tableConstants'
 
 const SortArrow = React.memo(({idx, sortBy, sortDirection}) => {
-  console.log(idx, sortBy, sortDirection)
   if (idx === sortBy) {
     if (sortDirection === ASCENDING) {
       return '⬆'
